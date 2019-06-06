@@ -1,6 +1,6 @@
 body {
   color: #333;
-  background-color: #9C6F52;
+  background-color: #8A6143;
   background-image: url("bg.jpg");
   background-repeat: repeat;
 }
@@ -47,6 +47,12 @@ main {
 input {
   width: 100%;
   background-color: transparent;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(51, 51, 51, .4);
+  font-style: italic;
 }
 
 .book .search input {
@@ -107,4 +113,48 @@ input {
   display: block;
   /* margin-bottom: 10px; */
   font-weight: bold;
+}
+
+.book .view .content {
+  display: block;
+  padding-top: 1px;
+}
+
+.book .edit {
+  height: 100%;
+}
+
+.book .edit form {
+  height: 100%;
+  display: block;
+}
+
+.book .edit input[name=title] {
+  font-size: 32px;
+  display: block;
+  font-weight: bold;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+  border-left: 0 none;
+  border-right: 0 none;
+  padding: 0;
+}
+
+.book .edit textarea[name=content] {
+  background-color: transparent;
+  width: 100%;
+  border: 0 none;
+  border-bottom: 1px solid #333;
+  resize: none;
+  height: calc(100% - 52px);
+  padding: 0;
+}
+
+.book .edit input, .book .edit textarea {
+  transition: background-color .5s;
+}
+
+.book .edit input:focus,
+.book .edit textarea:focus {
+  background-color: #ffffd6;
 }

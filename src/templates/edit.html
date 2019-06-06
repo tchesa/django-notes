@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block head_title %} Editar nota {% endblock %}
+
+{% block content %}
+
+<div class='book'>
+  <div class='edit'>
+    <form>
+      <input type='text' class='title' value='{{ note.title }}' placeholder='Titulo' required>
+      <textarea class='content' required>{{ note.content }}</textarea>
+      <button type='submit'>Save</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

@@ -10,7 +10,7 @@
   <ul class='notes-list'>
     {% for note in notes %}
     <li>
-      <a href='note/{{ note.id }}'>
+      <a href='{{ note.id }}'>
         <span class='title'>{{ note.title }}</span>
         <span class='content'>{{ note.content }}</span>
       </a>
