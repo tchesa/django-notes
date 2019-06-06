@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
 
 from .models import Note
-from .forms import NoteForm
+from .forms import NoteModelForm
 
 def list_note_page(request):
   notes = Note.objects.all()
@@ -16,9 +16,10 @@ def view_note_page(request, id):
   return render(request, 'view.html', context)
 
 def new_note_page(request):
-  form = NoteForm(request.POST or None) # tenta receber a requisição POST
+  form = NoteModelForm(request.POST or None) # tenta receber a requisição POST
   if form.is_valid():
-    obj = Note.objects.create(**form.cleaned_data) # cria o objeto
+    # obj = Note.objects.create(**form.cleaned_data) # cria o objeto
+    form.save()
     return redirect('/') # redireciona para a pagina inicial
   return render(request, 'new.html', {"form": form})
 

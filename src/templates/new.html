@@ -6,8 +6,6 @@
 <div class='book'>
   <div class='edit'>
     <form method='POST' action='.'> {% csrf_token %}
-      <!-- <input type='text' name='title' class='title' value='{{ note.title }}' placeholder='Titulo' required>
-      <textarea class='content' name='content' required>{{ note.content }}</textarea> -->
       {{ form }}
       <button type='submit'>Save</button>
     </form>

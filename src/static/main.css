@@ -51,7 +51,7 @@ input {
 
 input::placeholder,
 textarea::placeholder {
-  color: rgba(51, 51, 51, .4);
+  color: rgba(51, 51, 51, .6);
   font-style: italic;
 }
 
@@ -72,10 +72,10 @@ textarea::placeholder {
   border: 1px solid #333;
   border-radius: 5px;
   height: calc(100% - 50px);
-  overflow: hidden;
+  overflow: auto;
 }
 
-.book .notes-list li {
+.book .notes-list li:not(:last-child) {
   border-bottom: 1px solid #333;
 }
 
@@ -156,5 +156,5 @@ textarea::placeholder {
 
 .book .edit input:focus,
 .book .edit textarea:focus {
-  background-color: #ffffd6;
+  background-color: #ffff47;
 }
