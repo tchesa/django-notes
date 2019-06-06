@@ -4,5 +4,5 @@ from django.db import models
 
 class Note(models.Model):
   slug = models.SlugField()
-  title = models.TextField()
+  title = models.TextField(unique=True)
   content = models.TextField(null=True, blank=True)
