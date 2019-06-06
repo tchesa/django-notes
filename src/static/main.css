@@ -29,6 +29,8 @@ header .logo {
   background-color: #CCE855;
   padding: 6px 40px 12px;
   font-size: 32px;
+  color: #333;
+  text-decoration: none;
 }
 
 main {
@@ -81,7 +83,13 @@ textarea::placeholder {
   border-bottom: 1px solid #333;
 }
 
-.book .notes-list li > .options {
+.book .view .note-options {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.book .notes-list li > .note-options {
   position: absolute;
   top: 0;
   right: -20px;
@@ -89,12 +97,12 @@ textarea::placeholder {
   transition: .3s;
 }
 
-.book .notes-list li:hover > .options {
+.book .notes-list li:hover > .note-options {
   right: 0;
   opacity: 1;
 }
 
-.book .notes-list li > .options a {
+.note-options a {
   padding: 10px 5px;
   border: 0 none;
   display: inline-block;
@@ -102,15 +110,15 @@ textarea::placeholder {
   background-color: transparent;
 }
 
-.book .notes-list li > .options a:hover {
+.note-options a:hover {
   color: black;
 }
 
-.book .notes-list li > .options a:first-child {
+.note-options a:first-child {
   padding-left: 10px;
 }
 
-.book .notes-list li > .options a:last-child {
+.note-options a:last-child {
   padding-right: 10px;
 }
 
@@ -131,17 +139,24 @@ textarea::placeholder {
   display: block;
   font-size: 20px;
   font-weight: bold;
+  width: calc(100% - 56px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .book .notes-list li .content {
   display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .book .view {
   border-top: 1px solid #333;
   border-bottom: 1px solid #333;
-  padding-bottom: 20px;
   height: 100%;
+  position: relative;
 }
 
 .book .view .title {
@@ -149,11 +164,19 @@ textarea::placeholder {
   display: block;
   /* margin-bottom: 10px; */
   font-weight: bold;
+  width: calc(100% - 66px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .book .view .content {
   display: block;
   padding-top: 1px;
+  white-space: pre-wrap;
+  overflow-y: auto;
+  padding-bottom: 10px;
+  max-height: calc(100% - 48px);
 }
 
 .book .edit {
@@ -193,4 +216,10 @@ textarea::placeholder {
 .book .edit input:focus,
 .book .edit textarea:focus {
   background-color: #ffff47;
+}
+
+.book .edit button[type=submit] {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
 }
