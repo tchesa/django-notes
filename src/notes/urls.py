@@ -22,5 +22,6 @@ urlpatterns = [
   path('', list_note_page),
   path('new/', new_note_page),
   path('<int:id>/', view_note_page),
-  path('<int:id>/edit', edit_note_page)
+  path('<int:id>/edit', edit_note_page),
+  path('admin/', admin.site.urls)
 ]

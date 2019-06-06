@@ -1,15 +1,23 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% block head_title %} Notes {% endblock %}
 
 {% block content %}
 
 <div class='book'>
-  <div class="search">
+  <div class='search'>
     <input type='text' placeholder='Pesquisar'/>
   </div>
   <ul class='notes-list'>
     {% for note in notes %}
     <li>
+      <div class='options'>
+        <a href='{{ note.id }}/edit'>
+          <i class="far fa-edit"></i>
+        </a>
+        <a>
+          <i class='far fa-trash-alt'></i>
+        </a>
+      </div>
       <a href='{{ note.id }}'>
         <span class='title'>{{ note.title }}</span>
         <span class='content'>{{ note.content }}</span>

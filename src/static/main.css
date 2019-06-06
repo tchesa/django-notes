@@ -72,20 +72,58 @@ textarea::placeholder {
   border: 1px solid #333;
   border-radius: 5px;
   height: calc(100% - 50px);
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.book .notes-list li {
+  position: relative;
 }
 
 .book .notes-list li:not(:last-child) {
   border-bottom: 1px solid #333;
 }
 
-.book .notes-list li a {
-  display: block;
-  padding: 10px;
+.book .notes-list li > .options {
+  position: absolute;
+  top: 0;
+  /* right: -20px; */
+  /* opacity: 0; */
+  right: 0;
+  transition: .3s;
+}
+
+.book .notes-list li:hover > .options {
+  right: 0;
+  opacity: 1;
+}
+
+.book .notes-list li > .options a {
+  padding: 10px 5px;
+  display: inline-block;
   color: #333;
 }
 
-.book .notes-list li a:hover {
+.book .notes-list li > .options a:hover {
+  color: black;
+}
+
+.book .notes-list li > .options > a:first-child {
+  padding-left: 10px;
+}
+
+.book .notes-list li > .options > a:last-child {
+  padding-right: 10px;
+}
+
+.book .notes-list li > a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  transition: background-color .3s;
+}
+
+.book .notes-list li:hover > a {
   background-color: #ffff47;
   cursor: pointer;
   text-decoration: none;

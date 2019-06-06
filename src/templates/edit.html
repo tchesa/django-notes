@@ -5,12 +5,14 @@
 
 <div class='book'>
   <div class='edit'>
-    <form>
-      <input type='text' class='title' value='{{ note.title }}' placeholder='Titulo' required>
-      <textarea class='content' required>{{ note.content }}</textarea>
+    <form method='POST' action='./edit'> {% csrf_token %}
+      {{ form }}
       <button type='submit'>Save</button>
     </form>
   </div>
 </div>
+<script type='text/javascript'>
+  document.querySelector('input[name=title]').focus()
+</script>
 
 {% endblock %}
