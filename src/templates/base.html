@@ -13,16 +13,14 @@
     <title>{% block head_title %} Notes {% endblock %}</title>
   </head>
   <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-6 mx-auto">
-          <h1>{{title}}</h1>
-          {% block content %}
-          Replace this value
-          {% endblock %}
-        </div>
-      </div>
-    </div>
+    <header>
+      <span class='logo'>Notes</span>
+    </header>
+    <main>
+      {% block content %}
+
+      {% endblock %}
+    </main>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
