@@ -1,5 +1,8 @@
 body {
   color: #333;
+  background-color: #9C6F52;
+  background-image: url("bg.jpg");
+  background-repeat: repeat;
 }
 
 * {
@@ -37,47 +40,19 @@ main {
   border: 3px solid #333;
   border-radius: 10px;
   overflow: hidden;
-}
-
-.book .left,
-.book .right {
-  display: inline-block;
-  width: 50%;
-  height: 100%;
-  position: relative;
   padding: 20px;
-  vertical-align: top;
+  background-color: #FFFF81;
 }
 
-.book .left {
-  border-right: 1px solid rgba(0, 0, 0, .45);
-}
-
-.book .left::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 20px;
-  background-image: linear-gradient(to right, transparent, rgba(0, 0, 0, .4))
-}
-
-.book .right::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 20px;
-  background-image: linear-gradient(to left, transparent, rgba(0, 0, 0, .4))
+input {
+  width: 100%;
+  background-color: transparent;
 }
 
 .book .search input {
   padding: 2px 12px;
   border-radius: 15px;
   border: 1px solid #333;
-  width: 100%;
 }
 
 .book .search {
@@ -89,13 +64,25 @@ main {
   padding-left: 0;
   margin-bottom: 0;
   border: 1px solid #333;
-  border-radius: 3px;
+  border-radius: 5px;
   height: calc(100% - 50px);
+  overflow: hidden;
 }
 
 .book .notes-list li {
   border-bottom: 1px solid #333;
+}
+
+.book .notes-list li a {
+  display: block;
   padding: 10px;
+  color: #333;
+}
+
+.book .notes-list li a:hover {
+  background-color: #ffff47;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .book .notes-list li .title {

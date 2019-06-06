@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block head_title %} Notes {% endblock %}
+
+{% block content %}
+
+<div class='book'>
+  <div class='view'>
+    <span class='title'>{{ note.title }}</span>
+    <span class='content'>{{ note.content }}</span>
+  </div>
+</div>
+
+{% endblock %}

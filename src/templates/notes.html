@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block head_title %} Notes {% endblock %}
+
+{% block content %}
+
+<div class='book'>
+  <div class="search">
+    <input type='text' placeholder='Pesquisar'/>
+  </div>
+  <ul class='notes-list'>
+    {% for note in notes %}
+    <li>
+      <a href='note/{{ note.id }}'>
+        <span class='title'>{{ note.title }}</span>
+        <span class='content'>{{ note.content }}</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% endblock %}
