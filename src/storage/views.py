@@ -29,3 +29,8 @@ def edit_note_page(request, id):
     form.save() # salva o objeto
     return redirect('/') # redireciona para a pagina inicial
   return render(request, 'edit.html', {'form': form})
+
+def delete_note_page(request, id):
+  note = Note.objects.get(id=id)
+  note.delete()
+  return redirect('/') # redireciona para a pagina inicial
