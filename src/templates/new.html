@@ -6,8 +6,16 @@
 <div class='book'>
   <div class='edit'>
     <form method='POST' action='.'> {% csrf_token %}
-      {{ form }}
-      <button type='submit'>Save</button>
+      <div class="book-hd">
+        <span class='title'>
+          <a href='/'>
+            <i class="fas fa-arrow-left"></i>
+          </a>New note</span>
+        <button class='new' type='submit'><i class="far fa-save"></i>Save</button>
+      </div>
+      <div class="book-bd">
+        {{ form }}
+      </div>
     </form>
   </div>
 </div>

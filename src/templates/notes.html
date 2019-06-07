@@ -4,27 +4,40 @@
 {% block content %}
 
 <div class='book'>
-  <div class='search'>
-    <input type='text' placeholder='Pesquisar'/>
+  <div class='book-hd'>
+    <span class='title'>My notes</span>
+    <a class='new' href='/new'>
+      <i class="fas fa-plus"></i>New note
+    </a>
   </div>
-  <ul class='notes-list'>
-    {% for note in notes %}
-    <li>
-      <div class='note-options'>
-        <a href='{{ note.id }}/edit'>
-          <i class="far fa-edit"></i>
+  <div class='book-bd'>
+    <!-- <div class='search'>
+      <input type='text' placeholder='Pesquisar'/>
+    </div> -->
+    <ul class='notes-list'>
+      {% for note in notes %}
+      <li>
+        <div class='note-options'>
+          <a href='{{ note.id }}/edit'>
+            <i class="far fa-edit"></i>
+          </a>
+          <a href='{{ note.id }}/delete'>
+            <i class='far fa-trash-alt'></i>
+          </a>
+        </div>
+        <a href='{{ note.id }}'>
+          <span class='title'>{{ note.title }}</span>
+          <span class='content'>{{ note.content }}</span>
         </a>
-        <a href='{{ note.id }}/delete'>
-          <i class='far fa-trash-alt'></i>
-        </a>
-      </div>
-      <a href='{{ note.id }}'>
-        <span class='title'>{{ note.title }}</span>
-        <span class='content'>{{ note.content }}</span>
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <!-- <div class='new-button-container'>
+    <a class='new-btn' href='/new'>
+      Criar novo
+    </a>
+  </div> -->
 </div>
 
 {% endblock %}

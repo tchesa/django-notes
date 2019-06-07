@@ -39,11 +39,76 @@ main {
 
 .book {
   height: calc(100vh - 200px);
-  border: 3px solid #333;
   border-radius: 10px;
+  border: 3px solid #333;
   overflow: hidden;
+}
+
+.book .book-hd {
+  height: 50px;
+  background-image: linear-gradient(#A27364, #634239);
+  padding: 0 20px;
+  color: white;
+}
+
+.book .book-hd .title {
+  line-height: 50px;
+  font-size: 22px;
+}
+
+.book .book-hd .title a {
+  float: none;
+  color: white;
+  padding: 0;
+  margin: 0;
+}
+
+.book .book-hd .title a:hover {
+  color: white;
+}
+
+.book .book-hd a,
+.book .book-hd button {
+  color: #333;
+  display: inline-block;
+  float: right;
+  padding: 6px 12px;
+  margin: 7px 0;
+  border-radius: 5px;
+  text-decoration: none;
+  border: 0 none;
+}
+
+.book .book-hd a:hover,
+.book .book-hd button:hover {
+  color: black;
+}
+
+.book .book-hd a.mr {
+  margin-right: 10px;
+}
+
+.book .book-hd a i,
+.book .book-hd button i {
+  margin-right: 10px;
+}
+
+.book .book-hd .new {
+  background-color: #CCE855;
+}
+
+.book .book-hd .edit-btn {
+  background-color: #FFFF81;
+}
+
+.book .book-hd .delete {
+  background-color: #F49599;
+}
+
+.book .book-bd {
   padding: 20px;
   background-color: #FFFF81;
+  height: calc(100% - 50px);
 }
 
 input {
@@ -73,7 +138,7 @@ textarea::placeholder {
   margin-bottom: 0;
   border: 1px solid #333;
   border-radius: 5px;
-  height: calc(100% - 50px);
+  height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -81,12 +146,6 @@ textarea::placeholder {
 .book .notes-list li {
   position: relative;
   border-bottom: 1px solid #333;
-}
-
-.book .view .note-options {
-  position: absolute;
-  top: 0;
-  right: 0;
 }
 
 .book .notes-list li > .note-options {
@@ -139,10 +198,14 @@ textarea::placeholder {
   display: block;
   font-size: 20px;
   font-weight: bold;
-  width: calc(100% - 56px);
+  width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.book .notes-list li:hover .title {
+  width: calc(100% - 56px);
 }
 
 .book .notes-list li .content {
@@ -157,26 +220,25 @@ textarea::placeholder {
   border-bottom: 1px solid #333;
   height: 100%;
   position: relative;
+  max-height: 100%;
+  overflow-y: auto;
 }
 
 .book .view .title {
   font-size: 32px;
   display: block;
-  /* margin-bottom: 10px; */
+  margin-bottom: 10px;
   font-weight: bold;
-  width: calc(100% - 66px);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  word-break: break-all;
 }
 
 .book .view .content {
   display: block;
   padding-top: 1px;
   white-space: pre-wrap;
-  overflow-y: auto;
+  /* overflow-y: auto; */
   padding-bottom: 10px;
-  max-height: calc(100% - 48px);
+  /* max-height: calc(100% - 48px); */
 }
 
 .book .edit {
@@ -218,8 +280,36 @@ textarea::placeholder {
   background-color: #ffff47;
 }
 
-.book .edit button[type=submit] {
+/* .book .edit button[type=submit] {
   position: absolute;
   pointer-events: none;
   opacity: 0;
+} */
+
+/* .book .new-button-container {
+  position: absolute;
+  right: 44px;
+  bottom: -83px;
+  height: 80px;
+  overflow: hidden;
+  width: 120px;
 }
+
+.book .new-button-container .new-btn {
+  display: inline-block;
+  background-color: #CCE855;
+  font-weight: bold;
+  padding: 40px 10px 10px;
+  position: relative;
+  top: -38px;
+  text-decoration: none;
+  color: #333;
+  left: 11px;
+  transform: rotate(-3deg);
+  transition: .3s;
+}
+
+.book .new-button-container .new-btn:hover {
+  top: -30px;
+  transform: rotate(0deg);
+} */

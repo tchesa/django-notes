@@ -4,17 +4,24 @@
 {% block content %}
 
 <div class='book'>
-  <div class='view'>
-    <div class='note-options'>
-      <a href='edit'>
-        <i class="far fa-edit"></i>
-      </a>
-      <a href='delete'>
-        <i class='far fa-trash-alt'></i>
-      </a>
+  <div class="book-hd">
+    <span class='title'>
+      <a href='/'>
+        <i class="fas fa-arrow-left"></i>
+      </a>View note
+    </span>
+    <a class='delete' href='delete'>
+      <i class='far fa-trash-alt'></i>Delete
+    </a>
+    <a class='edit-btn mr' href='edit'>
+      <i class="far fa-edit"></i>Edit
+    </a>
+  </div>
+  <div class="book-bd">
+    <div class='view'>
+      <span class='title'>{{ note.title }}</span>
+      <span class='content'>{{ note.content }}</span>
     </div>
-    <span class='title'>{{ note.title }}</span>
-    <span class='content'>{{ note.content }}</span>
   </div>
 </div>
 
