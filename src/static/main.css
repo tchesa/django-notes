@@ -78,7 +78,6 @@ main {
 .book .book-hd a,
 .book .book-hd button {
   color: #333;
-  display: inline-block;
   float: right;
   padding: 6px 12px;
   margin: 7px 0;
@@ -288,36 +287,29 @@ textarea::placeholder {
   background-color: #ffff47;
 }
 
-/* .book .edit button[type=submit] {
-  position: absolute;
-  pointer-events: none;
-  opacity: 0;
-} */
+@media (max-width: 425px) {
+  header {
+    display: none;
+  }
 
-/* .book .new-button-container {
-  position: absolute;
-  right: 44px;
-  bottom: -83px;
-  height: 80px;
-  overflow: hidden;
-  width: 120px;
+  main {
+    margin: 15px;
+    padding: 0;
+  }
+
+  .book {
+    height: calc(100vh - 30px);
+  }
+
+  .book .book-hd > a i,
+  .book .book-hd > button i {
+    margin-right: 0;
+    position: relative;
+    top: 2px;
+  }
+
+  .book .book-hd a span,
+  .book .book-hd button span {
+    display: none;
+  }
 }
-
-.book .new-button-container .new-btn {
-  display: inline-block;
-  background-color: #CCE855;
-  font-weight: bold;
-  padding: 40px 10px 10px;
-  position: relative;
-  top: -38px;
-  text-decoration: none;
-  color: #333;
-  left: 11px;
-  transform: rotate(-3deg);
-  transition: .3s;
-}
-
-.book .new-button-container .new-btn:hover {
-  top: -30px;
-  transform: rotate(0deg);
-} */
