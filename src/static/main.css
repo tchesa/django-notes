@@ -108,6 +108,10 @@ main {
   background-color: #FFFF81;
 }
 
+.book .book-hd .upload {
+  background-color: #87D6F5;
+}
+
 .book .book-hd .delete {
   background-color: #F49599;
 }
@@ -212,7 +216,7 @@ textarea::placeholder {
 }
 
 .book .notes-list li:hover .title {
-  width: calc(100% - 56px);
+  width: calc(100% - 82px);
 }
 
 .book .notes-list li .content {
