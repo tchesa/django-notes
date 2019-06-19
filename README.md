@@ -1,1 +1,5 @@
-1:42:57
+## Run
+* ```pipenv shell```
+* ```cd src```
+  * Windows `python manage.py runserver`
+  * OSX/Linux `python3 manage.py runserver`
