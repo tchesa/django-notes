@@ -1,12 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.contrib.auth import logout
+from django.shortcuts import redirect
 
-def home_page(request):
-  title = 'Hello there...'
-  return render(request, 'home.html', {'title': title})
-
-def about_page(request):
-  return HttpResponse('<h1>About Us</h1>')
-
-def contact_page(request):
-  return HttpResponse('<h1>Contact Us</h1>')
+def logout_page(request):
+  logout(request)
+  return redirect('/') # redireciona para a pagina inicial

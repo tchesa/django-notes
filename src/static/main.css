@@ -41,6 +41,36 @@ header .logo:hover {
   transform: rotate(0deg);
 }
 
+header .user {
+  float: right;
+  background-color: white;
+  padding: 2px 1px;
+  border-radius: 5px;
+  margin: 7px 0;
+}
+
+header .user > span {
+  display: inline-block;
+  padding: 4px 10px;
+}
+
+header .user > a {
+  display: inline-block;
+  padding: 4px 12px;
+  background-color: #333;
+  color: white !important;
+  border-radius: 4px;
+}
+
+header .user > a:hover {
+  background-color: black;
+  text-decoration: none;
+}
+
+header .user > a > i {
+  margin-right: 10px;
+}
+
 main {
   margin-top: 100px;
 }
@@ -323,6 +353,13 @@ textarea::placeholder {
 
 .book.user form button.submit {
   background-color: #CCE855;
+}
+
+form .errorlist {
+  background-color: #F49599;
+  border-radius: 5px;
+  list-style: none;
+  padding: 6px 12px
 }
 
 @media (max-width: 425px) {

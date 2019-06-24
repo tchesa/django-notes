@@ -20,6 +20,16 @@
       <a href='/'>
         <span class='logo'>Notes</span>
       </a>
+
+      {% if user.is_authenticated %}
+      <div class='user'>
+        <span>Welcome, {{ user }}</span>
+        <a class='logout' href='/logout'>
+          <i class="fas fa-sign-out-alt"></i>Logout
+        </a>
+      </div>
+      {% endif %}
+
     </header>
     <main>
       {% block content %}
