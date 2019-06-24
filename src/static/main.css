@@ -291,6 +291,40 @@ textarea::placeholder {
   background-color: #ffff47;
 }
 
+.book.user {
+  max-width: 300px;
+  margin: 0 auto;
+  height: auto;
+}
+
+.book.user form > p > label {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.book.user form > p > input {
+  border: 2px solid #333;
+  border-radius: 5px;
+  padding: 2px 6px;
+}
+
+.book.user form > p > input:focus {
+  background-color: #ffff47;
+}
+
+.book.user form button {
+  color: #333;
+  padding: 6px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  border: 0 none;
+}
+
+.book.user form button.submit {
+  background-color: #CCE855;
+}
+
 @media (max-width: 425px) {
   header {
     display: none;
