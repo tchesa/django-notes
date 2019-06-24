@@ -1,22 +1,19 @@
 {% extends 'base.html' %}
-{% block head_title %}Login{% endblock %}
 
 {% block content %}
-
 <div class='book user'>
   <div class='book-hd'>
-    <span class='title'>Login</span>
+    <span class='title'>Signup</span>
   </div>
   <div class='book-bd'>
     <form method='POST'>
       {% csrf_token %}
       {{ form.as_p }}
       <div class='footer'>
-        <a href='/signup' class='info'>Signup</a>
-        <button type='submit' class='submit'>Login</button>
+        <a href='/login' class='info'>Login</a>
+        <button type='submit' class='submit'>Signup</button>
       </div>
     </form>
   </div>
 </div>
-
 {% endblock %}
