@@ -47,7 +47,13 @@ def upload_note(request):
     if request.method == 'POST':
         form = Note.objects.create()
         form.title = str(request.FILES['filename'])
-        form.content = (request.FILES['filename'].read())
+        uploaded_file = request.FILES['filename']
+        str_text = ''
+        for line in uploaded_file:
+            str_text = str_text + line.decode()  # "str_text" will be of `str` type
+
+        form.content = str_text
+
         form.user = request.user
         form.save()  # salva o objeto
         return redirect('/')
@@ -55,7 +61,7 @@ def upload_note(request):
 
 
 @login_required
-def download_note(id):
+def download_note(request, id):
     note = Note.objects.get(id=id)
     filename = note.title.replace(' ', '_') + ".txt"
     content = note.content
