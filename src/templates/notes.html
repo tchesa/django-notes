@@ -9,12 +9,15 @@
             <a class='new' href='/new'>
                 <i class="fas fa-plus"></i><span>Nova nota</span>
             </a>
-            <form method='POST' enctype="multipart/form-data" action="/">
-                {% csrf_token %}
-                <a class='upload mr'>
-                    <i class="fas fa-file-upload"></i><span><input type="file" class="autosubmit" placeholder="Upload"/></span>
-                </a>
-            </form>
+            <a class='upload mr'>
+                <form method='POST' action="/upload/" enctype="multipart/form-data">{% csrf_token %}
+                    <i class="fas fa-file-upload"></i>
+                    <span>
+                        <input class="submit-button" type="file" accept=".txt" name="filename" placeholder="Upload"
+                               onchange="form.submit()"/>Upload
+                    </span>
+                </form>
+            </a>
         </div>
         <div class='book-bd'>
             <!-- <div class='search'>
@@ -45,9 +48,3 @@
     </div>
 
 {% endblock %}
-
-<script>
-    $('form .autosubmit').on('change', function () {
-        this.form.submit();
-    });
-</script>
