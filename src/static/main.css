@@ -121,7 +121,8 @@ main {
   color: black;
 }
 
-.book .book-hd a.mr {
+.book .book-hd a.mr,
+.book .book-hd button.mr {
   margin-right: 10px;
 }
 
@@ -411,4 +412,10 @@ form > ul {
   .book .book-hd button span {
     display: none;
   }
+}
+
+.ninja-mode {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
 }
