@@ -1,26 +1,31 @@
 {% extends "base.html" %}
-{% block head_title %}New note{% endblock %}
+{% block head_title %}Nova nota{% endblock %}
 
 {% block content %}
 
-<div class='book'>
-  <div class='edit'>
-    <form method='POST' action='.'> {% csrf_token %}
-      <div class="book-hd">
-        <span class='title'>
-          <a href='/'>
-            <i class="fas fa-arrow-left"></i>
-          </a>New note</span>
-        <button class='new' type='submit'><i class="far fa-save"></i><span>Save</span></button>
-      </div>
-      <div class="book-bd">
-        {{ form }}
-      </div>
-    </form>
-  </div>
-</div>
-<script type='text/javascript'>
-  document.querySelector('input[name=title]').focus()
-</script>
+    <div class='book'>
+{#        <form method="post" action="upload" enctype="multipart/form-data">#}
+{#            <!--  <button type="submit">Upload</button>-->#}
+{#             {% csrf_token %}#}
+{#            <input class="btn btn-primary btn-md" role="button" type="submit" name="submit"#}
+{#                   value="Upload">#}
+{#        </form>#}
+        <div class='edit'>
 
+            <form method='POST' action='.'> {% csrf_token %}
+                <div class="book-hd">
+                    <span class='title'><a href='/'><i class="fas fa-arrow-left"></i></a>Nova nota</span>
+                    <button class='new' type='submit'><i class="far fa-save"></i><span>Salvar</span></button>
+
+                </div>
+                {{ file_content }}
+                <div class="book-bd">
+                    {{ form }}
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type='text/javascript'>
+        document.querySelector('input[name=title]').focus()
+    </script>
 {% endblock %}
