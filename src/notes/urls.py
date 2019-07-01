@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.contrib.auth.views import LoginView as login
 from django.urls import path
-from storage.views import (list_note_page, new_note_page, view_note_page, edit_note_page, delete_note_page)
+from storage.views import (list_note_page, new_note_page, view_note_page, edit_note_page, delete_note_page, download_note)
 from .views import (signup_page, logout_page)
 
 urlpatterns = [
@@ -26,6 +26,7 @@ urlpatterns = [
     path('new/', new_note_page),
     path('<int:id>/', view_note_page),
     path('<int:id>/edit', edit_note_page),
+    path('<int:id>/download', download_note),
     path('<int:id>/delete', delete_note_page),
     path('logout/', logout_page),
     path('admin/', admin.site.urls)
