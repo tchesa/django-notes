@@ -9,15 +9,9 @@
             <a class='new' href='/new'>
                 <i class="fas fa-plus"></i><span>Nova nota</span>
             </a>
-            <a class='upload mr'>
-                <form method='POST' action="/upload/" enctype="multipart/form-data">{% csrf_token %}
-                    <i class="fas fa-file-upload"></i>
-                    <span>
-                        <input class="submit-button" type="file" accept=".txt" name="filename" placeholder="Upload"
-                               onchange="form.submit()"/>Upload
-                    </span>
-                </form>
-            </a>
+            <button class='upload mr' onclick="document.getElementById('fileupload').click();">
+              <i class="fas fa-file-upload"></i><span>Upload</span>
+            </button>
         </div>
         <div class='book-bd'>
             <!-- <div class='search'>
@@ -46,5 +40,12 @@
             </ul>
         </div>
     </div>
+    <form class='ninja-mode' method='POST' action="/upload/" enctype="multipart/form-data">{% csrf_token %}
+      <i class="fas fa-file-upload"></i>
+      <span>
+          <input id='fileupload' class="submit-button" type="file" accept=".txt" name="filename" placeholder="Upload"
+                 onchange="form.submit()"/>Upload
+      </span>
+  </form>
 
 {% endblock %}
