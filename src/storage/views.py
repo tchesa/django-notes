@@ -46,11 +46,11 @@ def edit_note_page(request, id):
 def upload_note(request):
     if request.method == 'POST':
         form = Note.objects.create()
-        form.title = str(request.FILES['filename'])
+        form.title = str(request.FILES['filename']).replace('.txt', '')
         uploaded_file = request.FILES['filename']
         str_text = ''
         for line in uploaded_file:
-            str_text = str_text + line.decode()  # "str_text" will be of `str` type
+            str_text = str_text + line.decode('cp1252')  # "str_text" will be of `str` type
 
         form.content = str_text
 
