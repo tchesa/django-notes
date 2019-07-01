@@ -44,7 +44,7 @@ header .logo:hover {
 header .user {
   float: right;
   background-color: white;
-  padding: 2px 1px;
+  padding: 2px;
   border-radius: 5px;
   margin: 7px 0;
 }
