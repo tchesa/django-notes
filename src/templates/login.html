@@ -3,20 +3,20 @@
 
 {% block content %}
 
-<div class='book user'>
-  <div class='book-hd'>
-    <span class='title'>Login</span>
-  </div>
-  <div class='book-bd'>
-    <form method='POST'>
-      {% csrf_token %}
-      {{ form.as_p }}
-      <div class='footer'>
-        <a href='/signup' class='info'>Signup</a>
-        <button type='submit' class='submit'>Login</button>
-      </div>
-    </form>
-  </div>
-</div>
+    <div class='book user'>
+        <div class='book-hd'>
+            <span class='title'>Login</span>
+        </div>
+        <div class='book-bd'>
+            <form method='POST'>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class='footer'>
+                    <a href='/signup' class='info'>Signup</a>
+                    <button type='submit' class='submit'>Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
 {% endblock %}

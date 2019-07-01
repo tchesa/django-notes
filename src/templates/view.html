@@ -3,26 +3,24 @@
 
 {% block content %}
 
-<div class='book'>
-  <div class="book-hd">
-    <span class='title'>
-      <a href='/'>
-        <i class="fas fa-arrow-left"></i>
-      </a>Ver nota
-    </span>
-    <a class='delete' href='delete'>
-      <i class='far fa-trash-alt'></i><span>Deletar</span>
-    </a>
-    <a class='edit-btn mr' href='edit'>
-      <i class="far fa-edit"></i><span>Editar</span>
-    </a>
-  </div>
-  <div class="book-bd">
-    <div class='view'>
-      <span class='title'>{{ note.title }}</span>
-      <span class='content'>{{ note.content }}</span>
+    <div class='book'>
+        <div class="book-hd">
+            <span class='title'>
+                <a href='/'> <i class="fas fa-arrow-left"></i> </a>Ver nota
+            </span>
+            <a class='delete' href='delete'>
+                <i class='far fa-trash-alt'></i><span>Deletar</span>
+            </a>
+            <a class='edit-btn mr' href='edit'>
+                <i class="far fa-edit"></i><span>Editar</span>
+            </a>
+        </div>
+        <div class="book-bd">
+            <div class='view'>
+                <span class='title'>{{ note.title }}</span>
+                <span class='content'>{{ note.content }}</span>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
 {% endblock %}

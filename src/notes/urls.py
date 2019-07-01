@@ -20,13 +20,13 @@ from storage.views import (list_note_page, new_note_page, view_note_page, edit_n
 from .views import (signup_page, logout_page)
 
 urlpatterns = [
-  path('', list_note_page),
-  path('login/', login.as_view(template_name='login.html')),
-  path('signup/', signup_page),
-  path('new/', new_note_page),
-  path('<int:id>/', view_note_page),
-  path('<int:id>/edit', edit_note_page),
-  path('<int:id>/delete', delete_note_page),
-  path('logout/', logout_page),
-  path('admin/', admin.site.urls)
+    path('', list_note_page),
+    path('login/', login.as_view(template_name='login.html')),
+    path('signup/', signup_page),
+    path('new/', new_note_page),
+    path('<int:id>/', view_note_page),
+    path('<int:id>/edit', edit_note_page),
+    path('<int:id>/delete', delete_note_page),
+    path('logout/', logout_page),
+    path('admin/', admin.site.urls)
 ]

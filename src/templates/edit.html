@@ -8,17 +8,9 @@
             <form method='POST' action='./edit'>
                 {% csrf_token %}
                 <div class="book-hd">
-        <span class='title'>
-          <a href='/'>
-            <i class="fas fa-arrow-left"></i>
-          </a>Editar nota</span>
-
+                    <span class='title'>  <a href='/'> <i class="fas fa-arrow-left"></i> </a>Editar nota</span>
                     <button class='new' type='submit'><i class="far fa-save"></i><span>Salvar</span></button>
-                     <a class='upload mr' href=''>
-                        <i class="fas fa-file-upload"></i><span>Upload</span>
-                    </a>
                 </div>
-
 
                 <div class="book-bd">
                     {{ form }}

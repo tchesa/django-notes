@@ -3,39 +3,51 @@
 
 {% block content %}
 
-<div class='book'>
-  <div class='book-hd'>
-    <span class='title'>Minhas notas</span>
-    <a class='new' href='/new'>
-      <i class="fas fa-plus"></i><span>Nova nota</span>
-    </a>
-  </div>
-  <div class='book-bd'>
-    <!-- <div class='search'>
-      <input type='text' placeholder='Pesquisar'/>
-    </div> -->
-    <ul class='notes-list'>
-      {% for note in notes %}
-      <li>
-        <div class='note-options'>
-          <a href='' title='Download'>
-            <i class="far fa-file-archive"></i>
-          </a>
-          <a href='{{ note.id }}/edit' title='Editar'>
-            <i class="far fa-edit"></i>
-          </a>
-          <a href='{{ note.id }}/delete' title='Delete'>
-            <i class='far fa-trash-alt'></i>
-          </a>
+    <div class='book'>
+        <div class='book-hd'>
+            <span class='title'>Minhas notas</span>
+            <a class='new' href='/new'>
+                <i class="fas fa-plus"></i><span>Nova nota</span>
+            </a>
+            <form method='POST' enctype="multipart/form-data" action="">
+                {% csrf_token %}
+                <a class='upload mr'>
+                    <i class="fas fa-file-upload"></i><span><input type="file" class="autosubmit" placeholder="Upload"/></span>
+                </a>
+            </form>
         </div>
-        <a href='{{ note.id }}'>
-          <span class='title'>{{ note.title }}</span>
-          <span class='content'>{{ note.content }}</span>
-        </a>
-      </li>
-      {% endfor %}
-    </ul>
-  </div>
-</div>
+        <div class='book-bd'>
+            <!-- <div class='search'>
+              <input type='text' placeholder='Pesquisar'/>
+            </div> -->
+            <ul class='notes-list'>
+                {% for note in notes %}
+                    <li>
+                        <div class='note-options'>
+                            <a href='' title='Download'>
+                                <i class="far fa-file-archive"></i>
+                            </a>
+                            <a href='{{ note.id }}/edit' title='Editar'>
+                                <i class="far fa-edit"></i>
+                            </a>
+                            <a href='{{ note.id }}/delete' title='Delete'>
+                                <i class='far fa-trash-alt'></i>
+                            </a>
+                        </div>
+                        <a href='{{ note.id }}'>
+                            <span class='title'>{{ note.title }}</span>
+                            <span class='content'>{{ note.content }}</span>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
 
 {% endblock %}
+
+<script>
+    $('form .autosubmit').on('change', function () {
+        this.form.submit();
+    });
+</script>
